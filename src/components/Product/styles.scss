@@ -1,0 +1,58 @@
+.product {
+    background-color: rgb(60, 62, 68);
+    border-radius: 10px;
+    display: flex;
+    width: 45%;
+    margin: 15px;
+}
+
+.product img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 35%;
+}
+
+.product-right-part {
+    padding: 14px;
+}
+
+.name h2 {
+    color: #F5F5F5;
+    font-weight: 800;
+    font-size: 28px;
+}
+
+.status-species {
+    display: flex;
+    align-items: center;
+}
+
+.status-species div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-species p {
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.last-known-location, .place-first-seen {
+    margin: 20px 0;
+}
+
+.title-infos {
+    color: #9E9E9E;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.infos {
+    color: #F5F5F5;
+    font-size: 20px;
+    font-weight: 400;
+}
+

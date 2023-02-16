@@ -1,0 +1,120 @@
+.docs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+}
+
+.navbar-left-side {
+    padding: 34px 29px;
+    width: 23%;
+    overflow-y: scroll;
+}
+
+.nb-introduction, .nb-character, .nb-location, .nb-episode, .nb-libraries {
+    margin-bottom: 34px;
+}
+
+.nb-introduction h3, .nb-character h3, .nb-location h3, .nb-episode h3, .nb-libraries h3 {
+    font-size: 25px;
+    color: #333333;
+    font-weight: 700;
+}
+
+.nb-introduction p, .nb-character p, .nb-location p, .nb-episode p, .nb-libraries p {
+    font-size: 20px;
+    color: #333333;
+    font-weight: 400;
+    margin: 8px 0;
+}
+
+.content-right-side {
+    width: 100%;
+    padding: 45px 104px;
+}
+
+.c-introduction, .c-graphql, .c-rest, .c-info-pagination, .c-javascript-client, .c-character, 
+.c-character-schema, .c-get-all-characters, .c-get-single-character, .c-get-multiples-characters, 
+.c-filter-characters, .c-location, .c-location-schema, .c-get-all-locations, .c-get-single-location, .c-get-multiple-locations, .c-filter-locations, .c-episode, .c-episode-schema, .c-get-all-episodes, .c-get-single-episode, .c-get-multiple-episodes, .c-filter-episodes, .c-libraries, .c-libraries-dart, .c-libraries-elixir, .c-libraries-go, .c-libraries-java, .c-libraries-net, .c-libraries-php, 
+.c-libraries-python, .c-libraries-r, .c-libraries-ruby, .c-libraries-rust, .c-libraries-swift {
+    margin-top: 84px;
+}
+
+.content-right-side h1 {
+    color: #000000CC;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.content-right-side h2 {
+    font-size: 31px;
+    color: #000000CC;
+    font-weight: 800;
+}
+
+.content-right-side h3 {
+    font-size: 27px;
+    color: #000000CC;
+    font-weight: 800;
+}
+
+.text-content-right-side {
+    font-size: 20px;
+    color: #333333;
+    font-weight: 400;
+    margin: 8px 0;
+    line-height: 1.7em;
+}
+
+.link-content-right-side {
+    font-size: 20px;
+    color: #333333;
+    font-weight: 400;
+    margin: 8px 0;
+    border-bottom: 3px solid rgb(255, 152, 0);
+    text-decoration: none;
+    transition: all ease 0.1s;
+}
+
+.link-content-right-side:hover {
+    border: none;
+    color: rgb(255, 152, 0);
+}
+
+.text-strong-content-right-side {
+    font-size: 20px;
+    color: #333333;
+    font-weight: 600;
+    margin: 8px 0;
+    line-height: 1.7em;
+}
+
+.list-docs {
+    margin-left: 40px;
+}
+
+.table-docs {
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+.table-docs th, .table-docs td {
+    font-size: 20.5px;
+    color: #333333;
+    font-weight: 400;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    padding: 16px 21px 15px;
+}
+
+.table-docs th {
+    font-weight: 600;
+    text-align: left;
+}
+
+.table-docs th:nth-child(1), .table-docs td:nth-child(1) {
+    padding: 16px 21px 15px 0;
+}

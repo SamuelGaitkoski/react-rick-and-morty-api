@@ -1,0 +1,46 @@
+.about {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 44px 248px;
+}
+
+.a-what-is-this, .a-who-are-you, .a-why-did-you-build-this, .a-technical-stuff, .a-contribute-project, 
+.a-copyright {
+    margin-top: 55px;
+}
+
+.about h1 {
+    color: #000000CC;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.about h3 {
+    font-size: 27px;
+    color: #000000CC;
+    font-weight: 800;
+}
+
+.text-content-right-side {
+    font-size: 20px;
+    color: #333333;
+    font-weight: 400;
+    margin: 8px 0;
+    line-height: 1.7em;
+}
+
+.link-content-right-side {
+    font-size: 20px;
+    color: #333333;
+    font-weight: 400;
+    margin: 8px 0;
+    border-bottom: 3px solid rgb(255, 152, 0);
+    text-decoration: none;
+    transition: all ease 0.1s;
+}
+
+.link-content-right-side:hover {
+    border: none;
+    color: rgb(255, 152, 0);
+}
