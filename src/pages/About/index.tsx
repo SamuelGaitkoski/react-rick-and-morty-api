@@ -5,7 +5,7 @@ import { Footer } from '../../components/Footer';
 export const About = () => {
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <div className="about">       
                 <h1>About</h1>
                 <div className="a-what-is-this">

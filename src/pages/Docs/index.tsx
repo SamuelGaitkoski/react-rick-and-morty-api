@@ -9,6 +9,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 // import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 // import api from '../../services/api';
+import { api } from '../../api';
 
 const codeString1 = `
 query {
@@ -421,15 +422,10 @@ export const Docs = () => {
         handleGetAllCharacters();
     }, []);
 
-    const handleGetAllCharacters = async() => {
-        const response = await fetch('https://rickandmortyapi.com/api/character');
-        const data = await response.json();
-        setCharacters(data.results);
+    const handleGetAllCharacters = async () => {
+        let json = await api.getAllCharacters();
+        setCharacters(json.results);
     };
-
-    const handleCharacterSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setCharacterSearched(event.target.value);
-    }
 
     const handleGetCharacter = async() => {
         const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${characterSearched}`);
@@ -447,7 +443,7 @@ export const Docs = () => {
 
     return (
         <div className="docs">
-            <Header mode={theme} />
+            <Header />
             <div className="content">
                 <aside className="navbar-left-side">
                     <div className="nb-introduction">

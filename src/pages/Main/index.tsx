@@ -6,6 +6,7 @@ import { Footer } from '../../components/Footer';
 import { DataCharacter } from '../../types/DataCharacter';
 import { Character } from '../../types/Character';
 // import api from '../../services/api';
+import { api } from '../../api';
 
 export const Main = () => {
     const [loading, setLoading] = useState(false);
@@ -18,18 +19,16 @@ export const Main = () => {
         handleGetAllCharacters();
     }, []);
 
-    const handleGetAllCharacters = async() => {
+    const handleGetAllCharacters = async () => {
         setLoading(true);
-        const response = await fetch('https://rickandmortyapi.com/api/character');
-        const json = await response.json();
+        let json = await api.getAllCharacters();
         setLoading(false);
         setCharacters(json.results);
     };
 
-    const handleGetCharacter = async() => {
+    const handleGetCharacter = async (name: string) => {
         setLoading(true);
-        const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${characterSearched}`);
-        const json = await response.json();
+        let json = await api.getCharacterByName(name);
         setLoading(false);
         setFoundCharacters(json.results);
     };
@@ -39,12 +38,12 @@ export const Main = () => {
     };
 
     const handleButtonSearch = () => {
-        handleGetCharacter();
+        handleGetCharacter(characterSearched);
     };
 
     return (
         <div className="main">
-            {/* <Header /> */}
+            <Header />
             <div className="header-two">
                 <h1>The Rick and Morty API</h1>
             </div>
