@@ -1,12 +1,15 @@
+import '../styles/main.scss';
+
 import { useEffect, useState } from 'react';
-import './styles.scss';
-import { Header } from '../../components/Header/index';
-import { Product } from '../../components/Product';
-import { Footer } from '../../components/Footer';
-import { DataCharacter } from '../../types/DataCharacter';
-import { Character } from '../../types/Character';
-// import api from '../../services/api';
-import { api } from '../../api';
+
+import { Header } from '../components/Header';
+import { Product } from '../components/Product';
+import { Footer } from '../components/Footer';
+
+import { DataCharacter } from '../types/DataCharacter';
+import { Character } from '../types/Character';
+
+import { api } from '../services/api';
 
 export const Main = () => {
     const [loading, setLoading] = useState(false);

@@ -1,15 +1,17 @@
+import '../styles/docs.scss';
+
 import { useEffect, useState } from 'react';
-import './styles.scss';
-import { Header } from '../../components/Header/index';
-import { Product } from '../../components/Product';
-import { Footer } from '../../components/Footer';
-import { DataCharacter } from '../../types/DataCharacter';
-import { Character } from '../../types/Character';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-// import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-// import api from '../../services/api';
-import { api } from '../../api';
+
+import { Header } from '../components/Header';
+import { Product } from '../components/Product';
+import { Footer } from '../components/Footer';
+
+import { DataCharacter } from '../types/DataCharacter';
+import { Character } from '../types/Character';
+
+import { api } from '../services/api';
 
 const codeString1 = `
 query {

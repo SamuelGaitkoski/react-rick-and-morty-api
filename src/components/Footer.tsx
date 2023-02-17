@@ -1,11 +1,14 @@
+import '../styles/footer.scss';
+
 import { useState, useEffect } from 'react';
-import { DataCharacter } from '../../types/DataCharacter';
-import './styles.scss';
-import logoNetlify from '../../assets/logoNetlify.png';
-import logoStellate from '../../assets/logoStellate.jpg';
-import logoGithub from '../../assets/logoGithub.png';
-import logoLinkedin from '../../assets/logoLinkedin.png';
-import logoHeart from '../../assets/logoHeart.png';
+
+import { DataCharacter } from '../types/DataCharacter';
+
+import logoNetlify from '../assets/logoNetlify.png';
+import logoStellate from '../assets/logoStellate.jpg';
+import logoGithub from '../assets/logoGithub.png';
+import logoLinkedin from '../assets/logoLinkedin.png';
+import logoHeart from '../assets/logoHeart.png';
 
 export const Footer = () => {
     // const [charactersInfo, setCharactersInfo] = useState<DataCharacter[]>([]);

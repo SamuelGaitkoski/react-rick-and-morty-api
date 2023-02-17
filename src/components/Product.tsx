@@ -1,5 +1,6 @@
-import { Character } from "../../types/Character";
-import './styles.scss';
+import '../styles/product.scss';
+
+import { Character } from "../types/Character";
 
 type Props = {
     item: Character

@@ -1,6 +1,8 @@
+import '../styles/header.scss';
+
 import { useState } from 'react';
-import './styles.scss';
-import LogoHeader from '../../assets/logoHeader.png';
+
+import LogoHeader from '../assets/logoHeader.png';
 
 export const Header = () => {
     return (

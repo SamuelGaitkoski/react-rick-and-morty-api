@@ -1,6 +1,7 @@
-import './styles.scss';
-import { Header } from '../../components/Header/index';
-import { Footer } from '../../components/Footer';
+import '../styles/supportus.scss';
+
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
 
 export const SupportUs = () => {
     return (

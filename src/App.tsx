@@ -1,4 +1,5 @@
-import './App.scss';
+import './styles/App.scss';
+
 import { Main } from './pages/Main';
 import { Docs } from './pages/Docs';
 import { About } from './pages/About';
