@@ -1,9 +1,9 @@
-import { Routes } from './Routes';
+import { Default } from "./pages/Default";
 
 const App = () => {
   return (
     <div>
-      <Routes />
+      <Default />
     </div>
   );
 }

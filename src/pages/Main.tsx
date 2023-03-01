@@ -2,9 +2,7 @@ import '../styles/main.scss';
 
 import { useEffect, useState } from 'react';
 
-import { Header } from '../components/Header';
 import { Product } from '../components/Product';
-import { Footer } from '../components/Footer';
 
 import { Character } from '../types/Character';
 
@@ -45,7 +43,6 @@ export const Main = () => {
 
     return (
         <div className="main">
-            <Header />
             <div className="header-two">
                 <h1>The Rick and Morty API</h1>
             </div>
@@ -78,7 +75,6 @@ export const Main = () => {
                     </div>
                 }
             </div>
-            <Footer />
         </div>
     );
 }
