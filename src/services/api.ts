@@ -12,5 +12,13 @@ export const api = {
     getCharacterByName: async (name: string) => {
         let response = await axiosInstance.get(`/character/?name=${name}`);
         return response.data;
+    },
+    getAllLocations: async () => {
+        let response = await axiosInstance.get('/location');
+        return response.data;
+    },
+    getAllEpisodes: async () => {
+        let response = await axiosInstance.get('/episode');
+        return response.data;
     }
 }

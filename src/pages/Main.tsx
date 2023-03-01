@@ -6,7 +6,6 @@ import { Header } from '../components/Header';
 import { Product } from '../components/Product';
 import { Footer } from '../components/Footer';
 
-import { DataCharacter } from '../types/DataCharacter';
 import { Character } from '../types/Character';
 
 import { api } from '../services/api';

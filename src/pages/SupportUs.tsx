@@ -6,7 +6,7 @@ import { Footer } from '../components/Footer';
 export const SupportUs = () => {
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <div className="support-us">       
                 <h1>Support The Rick and Morty API</h1>
                 <p className="text-strong">Help to maintain The Rick and Morty API's infrastructure!</p>

@@ -1,6 +1,7 @@
 import '../styles/header.scss';
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import LogoHeader from '../assets/logoHeader.png';
 
@@ -11,13 +12,13 @@ export const Header = () => {
             <div>
                 <ul>
                     <li>
-                        <a href="https://rickandmortyapi.com/documentation/">Docs</a>
+                        <Link to="/documentation">Docs</Link>
                     </li>
                     <li>
-                        <a href="https://rickandmortyapi.com/about/">About</a>
+                        <Link to="/about">About</Link>
                     </li>
                     <li>
-                        <button className="button-support-us">SUPPORT US</button>
+                        <Link to='/support-us' className="button-support-us">SUPPORT US</Link>
                     </li>
                     <li>
                         <button className="button-mode">{`DARK MODE`}</button>

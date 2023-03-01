@@ -1,15 +1,9 @@
-import { Main } from './pages/Main';
-import { Docs } from './pages/Docs';
-import { About } from './pages/About';
-import { SupportUs } from './pages/SupportUs';
+import { Routes } from './Routes';
 
 const App = () => {
   return (
     <div>
-      {/* <Main /> */}
-      <Docs />
-      {/* <About /> */}
-      {/* <SupportUs /> */}
+      <Routes />
     </div>
   );
 }

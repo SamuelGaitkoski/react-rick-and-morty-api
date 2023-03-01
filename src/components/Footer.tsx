@@ -1,8 +1,10 @@
 import '../styles/footer.scss';
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { GithubLogo, LinkedinLogo, Heart } from 'phosphor-react';
 
-import { DataCharacter } from '../types/DataCharacter';
+import { api } from '../services/api';
 
 import logoNetlify from '../assets/logoNetlify.png';
 import logoStellate from '../assets/logoStellate.jpg';
@@ -11,42 +13,37 @@ import logoLinkedin from '../assets/logoLinkedin.png';
 import logoHeart from '../assets/logoHeart.png';
 
 export const Footer = () => {
-    // const [charactersInfo, setCharactersInfo] = useState<DataCharacter[]>([]);
-    // const [locationsInfo, setLocationsInfo] = useState([]);
-    // const [episodesInfo, setEpisodesInfo] = useState([]);
+    const [charactersInfo, setCharactersInfo] = useState<number>(0);
+    const [locationsInfo, setLocationsInfo] = useState<number>(0);
+    const [episodesInfo, setEpisodesInfo] = useState<number>();
 
-    // useEffect(() => {
-    //     handleGetAllCharacters();
-    //     handleGetAllLocations();
-    //     handleGetAllEpisodes();
-    // }, []);
+    useEffect(() => {
+        loadAllCharacters();
+        loadAllLocations();
+        loadAllEpisodes();
+    }, []);
 
-    // const handleGetAllCharacters = async() => {
-    //     const response = await fetch('https://rickandmortyapi.com/api/character');
-    //     const data = await response.json();
-    //     setCharactersInfo(data);
-    // };
+    const loadAllCharacters = async () => {
+        let json = await api.getAllCharacters();
+        setCharactersInfo(json.info.count);
+    };
 
-    // const handleGetAllLocations = async() => {
-    //     const response = await fetch('https://rickandmortyapi.com/api/location');
-    //     const data = await response.json();
-    //     setLocationsInfo(data);
-    // };
+    const loadAllLocations = async () => {
+        let json = await api.getAllLocations();
+        setLocationsInfo(json.info.count);
+    };
 
-    // const handleGetAllEpisodes = async() => {
-    //     const response = await fetch('https://rickandmortyapi.com/api/episode');
-    //     const data = await response.json();
-    //     setEpisodesInfo(data);
-    // };
-
-    // console.log(charactersInfo[0].info.count);
+    const loadAllEpisodes = async () => {
+        let json = await api.getAllEpisodes();
+        setEpisodesInfo(json.info.count);
+    };
 
     return (
         <div className="footer">
             <div className="general-infos">
-                <p>CHARACTERS: {`tantos`}</p>
-                <p>LOCATIONS: {`tantos`}</p>
-                <p>EPISODES: {`tantos`}</p>
+                <p>CHARACTERS: {charactersInfo}</p>
+                <p>LOCATIONS: {locationsInfo}</p>
+                <p>EPISODES: {episodesInfo}</p>
             </div>
             <div className="server-status">
                 <p>SERVER STATUS</p>
@@ -57,9 +54,15 @@ export const Footer = () => {
                 <img src={logoStellate} alt="" />
             </div>
             <div className="social-media">
-                <img src={logoGithub} alt="" />
-                <img src={logoLinkedin} alt="" />
-                <img src={logoHeart} alt="" />
+                <a href="https://github.com/SamuelGaitkoski" target="_blank">
+                    <GithubLogo weight="fill" />
+                </a>
+                <a href="https://br.linkedin.com/in/samuel-gaitkoski-375385203" target="_blank">
+                    <LinkedinLogo weight="fill" />
+                </a>
+                <Link to="/support-us">
+                    <Heart weight="fill" />
+                </Link>
             </div>
             <div className="developed-by">
                 <p>{`<> by`}</p>
