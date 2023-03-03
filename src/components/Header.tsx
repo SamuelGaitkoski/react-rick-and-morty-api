@@ -5,12 +5,17 @@ import { Link } from 'react-router-dom';
 
 import LogoHeader from '../assets/logoHeader.png';
 
-// type Props = {
-//     onClick: (mode: "light" | "dark") => void;
-// }
+type Props = {
+    onChangeTheme: (mode: "light" | "dark") => void;
+}
 
-export const Header = (/*{ onClick }: Props*/) => {
-    // const [mode, setMode] = useState();
+export const Header = ({ onChangeTheme }: Props) => {
+    const [mode, setMode] = useState<"light" | "dark">("light");
+
+    const handleModeButton = () => {
+        mode === "light" ? setMode("dark") : setMode("light");
+        onChangeTheme(mode);
+    }
 
     return (
         <div className="header">
@@ -27,7 +32,15 @@ export const Header = (/*{ onClick }: Props*/) => {
                         <Link to='/support-us' className="button-support-us">SUPPORT US</Link>
                     </li>
                     <li>
-                        <button className="button-mode">{`DARK MODE`}</button>
+                        <button 
+                            className="button-mode" 
+                            onClick={handleModeButton}
+                            style={{backgroundColor: mode === "light" ? "#FFF" : "#000000CC",
+                                    color: mode === "light" ? "#333" : "#FFF",
+                                    border: mode === "light" ? "1px solid #bebebe" : "none"}}
+                        >
+                            {`${mode.toUpperCase()}`}
+                        </button>
                     </li>
                 </ul>
             </div>

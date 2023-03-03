@@ -10,84 +10,65 @@ import { api } from '../services/api';
 
 import { codeString1, codeString2, codeString3, codeString4, codeString5, codeString6, codeString7, codeString8, codeString9, codeString10, codeString11, codeString12, codeString13, codeString14, codeString15, codeString16, codeString17, codeString18, codeString19, codeString20, codeString21, codeString22, codeString23, codeString24, codeString25, codeString26, codeString27 } from '../utils/CodeStrings';
 
-export const Docs = () => {
-    const [characters, setCharacters] = useState<Character[]>([]);
-    const [foundCharacters, setFoundCharacters] = useState<Character[]>([]);
-    const [characterSearched, setCharacterSearched] = useState("");
-    const [theme, setTheme] = useState<"light" | "dark">("light");
+type Props = {
+    theme: "light" | "dark";
+}
 
-    useEffect(() => {
-        // api.get("/character/27").then((response) => setCharacters(response.data))
-        handleGetAllCharacters();
-    }, []);
-
-    const handleGetAllCharacters = async () => {
-        let json = await api.getAllCharacters();
-        setCharacters(json.results);
-    };
-
-    const handleGetCharacter = async() => {
-        const response = await fetch(`https://rickandmortyapi.com/api/character/?name=${characterSearched}`);
-        const data = await response.json();
-        setFoundCharacters(data.results);
-    };
-
-    const handleButtonSearch = () => {
-        handleGetCharacter();
-    }
-
-    const toggleTheme = () => {
-        setTheme(theme === "light" ? "light" : "dark");
-    }
+export const Docs = ({ theme }: Props) => {
+    console.log(theme);
 
     return (
-        <div className="docs">
+        <div 
+            className="docs" 
+            style={{backgroundColor: theme === "light" ? "#FFF" : "#000000CC"}}
+        >
             <div className="content">
                 <aside className="navbar-left-side">
-                    <div className="nb-introduction">
-                        <h3>Introduction</h3>
-                        <p>GraphQL</p>
-                        <p>REST</p>
-                        <p>Info e Pagination</p>
-                        <p>JavaScript client</p>
+                    <div 
+                    className="nb-introduction">
+                        <h3 style={{color: theme === "light" ? "#333" : "#FFF"}}>Introduction</h3>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>GraphQL</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>REST</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Info e Pagination</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>JavaScript client</p>
                     </div>
                     <div className="nb-character">
-                        <h3>Character</h3>
-                        <p>Character schema</p>
-                        <p>Get all characters</p>
-                        <p>Get a single character</p>
-                        <p>Get multiple characters</p>
-                        <p>Filter characters</p>
+                        <h3 style={{color: theme === "light" ? "#333" : "#FFF"}}>Character</h3>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Character schema</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Get all characters</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Get a single character</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Get multiple characters</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Filter characters</p>
                     </div>
                     <div className="nb-location">
-                        <h3>Location</h3>
-                        <p>Location schema</p>
-                        <p>Get all locations</p>
-                        <p>Get a single location</p>
-                        <p>Get multiple locations</p>
-                        <p>Filter locations</p>
+                        <h3 style={{color: theme === "light" ? "#333" : "#FFF"}}>Location</h3>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Location schema</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Get all locations</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Get a single location</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Get multiple locations</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Filter locations</p>
                     </div>
                     <div className="nb-episode">
-                        <h3>Episode</h3>
-                        <p>Episode schema</p>
-                        <p>Get all episodes</p>
-                        <p>Get a single episode</p>
-                        <p>Get multiple episodes</p>
-                        <p>Filter episodes</p>
+                        <h3 style={{color: theme === "light" ? "#333" : "#FFF"}}>Episode</h3>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Episode schema</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Get all episodes</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Get a single episode</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Get multiple episodes</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Filter episodes</p>
                     </div>
                     <div className="nb-libraries">
-                        <h3>Libraries</h3>
-                        <p>Dart</p>
-                        <p>Elixir</p>
-                        <p>Go</p>
-                        <p>Java</p>
-                        <p>.NET</p>
-                        <p>PHP</p>
-                        <p>Python</p>
-                        <p>R</p>
-                        <p>Ruby</p>
-                        <p>Rust</p>
-                        <p>Swift</p>
+                        <h3 style={{color: theme === "light" ? "#333" : "#FFF"}}>Libraries</h3>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Dart</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Elixir</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Go</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Java</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>.NET</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>PHP</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Python</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>R</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Ruby</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Rust</p>
+                        <p style={{color: theme === "light" ? "#333" : "#FFF"}}>Swift</p>
                     </div>
                 </aside>
                 <div className="content-right-side">
