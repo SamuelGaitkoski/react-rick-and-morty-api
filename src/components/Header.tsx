@@ -5,7 +5,13 @@ import { Link } from 'react-router-dom';
 
 import LogoHeader from '../assets/logoHeader.png';
 
-export const Header = () => {
+// type Props = {
+//     onClick: (mode: "light" | "dark") => void;
+// }
+
+export const Header = (/*{ onClick }: Props*/) => {
+    // const [mode, setMode] = useState();
+
     return (
         <div className="header">
             <img src={LogoHeader} alt="" />
